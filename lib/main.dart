@@ -34,53 +34,69 @@ class RecipePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // =========================
-              // PART 1 - IMAGE + TITLE
+              // PART 1 - IMAGE
               // =========================
               ClipRRect(
                 borderRadius: const BorderRadius.vertical(
                   top: Radius.circular(25),
                 ),
-                child: Image.network(
-                  "https://images.unsplash.com/photo-1604908554027-3b1c88a5f9ad",
-                  height: 200,
+                child: Image.asset(
+                  'assets/chicken.jpg',
+                  height: 285,
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),
               ),
 
+              // TITLE
               const Padding(
                 padding: EdgeInsets.all(16),
                 child: Text(
-                  "Lemon Herb Roasted Chicken",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  "Filipino Style Chicken Adobo",
+                  style: TextStyle(
+                    fontSize: 24,
+                    letterSpacing: 2,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
 
               // =========================
-              // PART 2 - PREP / COOK / DIFFICULTY
+              // PART 2 - ICON ARRANGEMENT
               // =========================
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // LEFT COLUMN
+                    const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(Icons.timer, color: Colors.blueGrey),
-                        SizedBox(width: 6),
-                        Text("Prep: 15 min"),
+                        Row(
+                          children: [
+                            Icon(Icons.timer, color: Colors.blueGrey),
+                            SizedBox(width: 6),
+                            Text("Prep: 15 min"),
+                          ],
+                        ),
+
+                        SizedBox(height: 10),
+
+                        Row(
+                          children: [
+                            Icon(Icons.star, color: Colors.blueGrey),
+                            SizedBox(width: 6),
+                            Text("Cook: 45 min"),
+                          ],
+                        ),
                       ],
                     ),
 
-                    Row(
-                      children: [
-                        Icon(Icons.star, color: Colors.blueGrey),
-                        SizedBox(width: 6),
-                        Text("Cook: 45 min"),
-                      ],
-                    ),
+                    const Spacer(),
 
-                    Row(
+                    // RIGHT COLUMN
+                    const Row(
                       children: [
                         Icon(Icons.restaurant_menu, color: Colors.blueGrey),
                         SizedBox(width: 6),
@@ -94,53 +110,58 @@ class RecipePage extends StatelessWidget {
               const SizedBox(height: 20),
 
               // =========================
-              // PART 3 - INGREDIENTS + HEART
+              // INGREDIENTS
               // =========================
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: Text(
+                  "Ingredients",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ),
+
+              const SizedBox(height: 5),
+
+              // INGREDIENTS + HEART
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
-                      "Ingredients",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    const Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("• 1 whole chicken"),
+                          Text("• Garlic"),
+                          Text("• Onion"),
+                          Text("• Bay Leaves"),
+                          Text("• Cooking Oil"),
+                          Text("• 1/2 Cup soy sauce"),
+                          Text("• 1/4 Cup vinegar"),
+                          Text("• 1 Cup water"),
+                        ],
                       ),
                     ),
 
-                    SizedBox(height: 10),
-
-                    Text("• 1 whole chicken"),
-                    Text("• Lemons"),
-                    Text("• Fresh rosemary"),
-                    Text("• Sea salt"),
-                    Text("• Pepper"),
+                    Container(
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(color: Colors.black26, blurRadius: 20),
+                        ],
+                      ),
+                      child: const Padding(
+                        padding: EdgeInsets.all(10),
+                        child: Icon(Icons.favorite, color: Colors.black),
+                      ),
+                    ),
                   ],
                 ),
               ),
 
               const SizedBox(height: 20),
-
-              Align(
-                alignment: Alignment.bottomRight,
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 16, bottom: 16),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(color: Colors.black12, blurRadius: 6),
-                      ],
-                    ),
-                    child: const Padding(
-                      padding: EdgeInsets.all(10),
-                      child: Icon(Icons.favorite_border, color: Colors.black),
-                    ),
-                  ),
-                ),
-              ),
             ],
           ),
         ),
