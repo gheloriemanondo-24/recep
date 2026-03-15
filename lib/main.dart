@@ -92,6 +92,55 @@ class RecipePage extends StatelessWidget {
               ),
 
               const SizedBox(height: 20),
+
+              // =========================
+              // PART 3 - INGREDIENTS + HEART
+              // =========================
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text(
+                      "Ingredients",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+
+                    SizedBox(height: 10),
+
+                    Text("• 1 whole chicken"),
+                    Text("• Lemons"),
+                    Text("• Fresh rosemary"),
+                    Text("• Sea salt"),
+                    Text("• Pepper"),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+              Align(
+                alignment: Alignment.bottomRight,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 16, bottom: 16),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(color: Colors.black12, blurRadius: 6),
+                      ],
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Icon(Icons.favorite_border, color: Colors.black),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
