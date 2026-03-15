@@ -55,43 +55,6 @@ class RecipePage extends StatelessWidget {
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ),
-
-              // =========================
-              // PART 2 - PREP / COOK / DIFFICULTY
-              // =========================
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Row(
-                      children: [
-                        Icon(Icons.timer, color: Colors.blueGrey),
-                        SizedBox(width: 6),
-                        Text("Prep: 15 min"),
-                      ],
-                    ),
-
-                    Row(
-                      children: [
-                        Icon(Icons.star, color: Colors.blueGrey),
-                        SizedBox(width: 6),
-                        Text("Cook: 45 min"),
-                      ],
-                    ),
-
-                    Row(
-                      children: [
-                        Icon(Icons.restaurant_menu, color: Colors.blueGrey),
-                        SizedBox(width: 6),
-                        Text("Difficulty: Easy"),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-
-              const SizedBox(height: 20),
             ],
           ),
         ),
