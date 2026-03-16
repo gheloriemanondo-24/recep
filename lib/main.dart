@@ -22,77 +22,150 @@ class RecipePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFDDE3E7),
+      backgroundColor: const Color.fromARGB(255, 56, 54, 54),
       body: Center(
-        child: Container(
-          width: 350,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(25),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // =========================
-              // PART 1 - IMAGE + TITLE
-              // =========================
-              ClipRRect(
-                borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(25),
-                ),
-                child: Image.network(
-                  "https://images.unsplash.com/photo-1604908554027-3b1c88a5f9ad",
-                  height: 200,
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Container(
+            width: 390,
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 155, 133, 133),
+              borderRadius: BorderRadius.circular(25),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // PART 1 - BG IMAGE & TITLE
+                Container(
+                  height: 190,
                   width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-              ),
-
-              const Padding(
-                padding: EdgeInsets.all(16),
-                child: Text(
-                  "Lemon Herb Roasted Chicken",
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                ),
-              ),
-
-              // =========================
-              // PART 2 - PREP / COOK / DIFFICULTY
-              // =========================
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Row(
-                      children: [
-                        Icon(Icons.timer, color: Colors.blueGrey),
-                        SizedBox(width: 6),
-                        Text("Prep: 15 min"),
-                      ],
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(25),
                     ),
-
-                    Row(
-                      children: [
-                        Icon(Icons.star, color: Colors.blueGrey),
-                        SizedBox(width: 6),
-                        Text("Cook: 45 min"),
-                      ],
+                    image: DecorationImage(
+                      image: AssetImage('assets/chicken.jpg'),
+                      fit: BoxFit.cover,
                     ),
-
-                    Row(
-                      children: [
-                        Icon(Icons.restaurant_menu, color: Colors.blueGrey),
-                        SizedBox(width: 6),
-                        Text("Difficulty: Easy"),
-                      ],
-                    ),
-                  ],
+                  ),
                 ),
-              ),
 
-              const SizedBox(height: 20),
-            ],
+                // TITLE
+                const Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Text(
+                    "Filipino Style: Chicken Adobo",
+                    style: TextStyle(
+                      fontSize: 24,
+                      letterSpacing: 3,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+
+                const SizedBox(height: 10),
+
+                // PART 2 - ICON ARRANGEMENT
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 9),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: const [
+                          Icon(
+                            Icons.timer,
+                            color: Color.fromARGB(255, 32, 41, 46),
+                          ),
+                          SizedBox(width: 5),
+                          Text("Prep: 15 min"),
+                        ],
+                      ),
+
+                      Row(
+                        children: const [
+                          Icon(
+                            Icons.star,
+                            color: Color.fromARGB(255, 32, 41, 46),
+                          ),
+                          SizedBox(width: 5),
+                          Text("Cook: 45 min"),
+                        ],
+                      ),
+
+                      Row(
+                        children: const [
+                          Icon(
+                            Icons.restaurant_menu,
+                            color: Color.fromARGB(255, 32, 41, 46),
+                          ),
+                          SizedBox(width: 5),
+                          Text("Difficulty: Easy"),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+
+                const SizedBox(height: 25),
+
+                // INGREDIENTS
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Text(
+                    "Ingredients",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                ),
+
+                const SizedBox(height: 10),
+
+                // INGREDIENTS + HEART
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Expanded(
+                        child: DefaultTextStyle(
+                          style: const TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 2,
+                            color: Colors.black87,
+                          ),
+                          child: const Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("• 1 whole chicken"),
+                              Text("• Garlic"),
+                              Text("• Onion"),
+                              Text("• Bay Leaves"),
+                              Text("• Cooking Oil"),
+                              Text("• 1/2 Cup soy sauce"),
+                              Text("• 1/4 Cup vinegar"),
+                              Text("• 1 Cup water"),
+                            ],
+                          ),
+                        ),
+                      ),
+
+                      Container(
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                          boxShadow: [BoxShadow(color: Colors.black26)],
+                        ),
+                        child: const Padding(
+                          padding: EdgeInsets.all(8),
+                          child: Icon(Icons.favorite, color: Colors.black),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
